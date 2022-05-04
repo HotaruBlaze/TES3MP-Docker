@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 LABEL Author="HotaruBlaze <https://github.com/HotaruBlaze>"
 ENV USER=container HOME=/home/container
-ENV TES3MP_VERSION=0.8.1
+ARG TES3MP_VERSION
 
 RUN apt-get update && \
     apt-get install -y -qq \
@@ -25,7 +25,9 @@ WORKDIR ${HOME}
 
 RUN curl -O -J -L $(curl -sL https://api.github.com/repos/TES3MP/openmw-tes3mp/releases/tags/tes3mp-${TES3MP_VERSION} | jq -r ".assets[] | select(.name | contains(\"tes3mp-server-GNU+Linux-x86_64\")) | .browser_download_url") \
     && tar -xzvf *.tar.gz \
-    && rm -rf *.tar.gz
+    && rm -rf *.tar.gz \
+    cp -r TES3MP-server/* ${HOME}/* \
+    && rm -rf TES3MP-server
 
 COPY ./entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh", "--", "./tes3mp-server" ]
