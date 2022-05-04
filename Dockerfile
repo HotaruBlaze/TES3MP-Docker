@@ -1,6 +1,7 @@
 FROM ubuntu:bionic
 
 LABEL Author="HotaruBlaze <https://github.com/HotaruBlaze>"
+LABEL org.opencontainers.image.source = "https://github.com/HotaruBlaze/TES3MP-Docker"
 ENV USER=container HOME=/home/container
 ARG TES3MP_VERSION
 
