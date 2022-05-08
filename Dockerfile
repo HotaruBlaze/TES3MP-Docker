@@ -5,6 +5,11 @@ LABEL org.opencontainers.image.source = "https://github.com/HotaruBlaze/TES3MP-D
 ENV USER=container HOME=/home/container
 ARG TES3MP_VERSION
 
+ENV SERVER_NAME = My TES3MP Server
+ENV SERVER_PORT = 25565
+ENV MAX_PLAYERS = 64
+ENV ENABLE_MASTERSERVER = true
+
 RUN apt-get update && \
     apt-get install -y -qq \
     curl \
@@ -19,6 +24,8 @@ RUN apt-get update && \
 RUN useradd -u 500 -ms /bin/bash ${USER} \
     && chown ${USER}:nogroup ${HOME} \
     && cd ${HOME}
+RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.2.0/envsubst-`uname -s`-`uname -m` -o /usr/local/bin/envsubst \
+    && chmod +x /usr/local/bin/envsubst 
 
 USER ${USER}
 
