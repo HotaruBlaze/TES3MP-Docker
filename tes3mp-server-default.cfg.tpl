@@ -7,7 +7,7 @@ maximumPlayers = ${MAX_PLAYERS}
 hostname = ${SERVER_NAME}
 # 0 - Verbose (spam), 1 - Info, 2 - Warnings, 3 - Errors, 4 - Only fatal errors
 logLevel = 1
-password =
+password = ${SERVER_PASSSWORD}
 
 [Plugins]
 home = ./server

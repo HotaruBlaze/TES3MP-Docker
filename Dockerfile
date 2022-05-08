@@ -9,6 +9,7 @@ ENV SERVER_NAME = My TES3MP Server
 ENV SERVER_PORT = 25565
 ENV MAX_PLAYERS = 64
 ENV ENABLE_MASTERSERVER = true
+ENV SERVER_PASSSWORD
 
 RUN apt-get update && \
     apt-get install -y -qq \
