@@ -38,4 +38,6 @@ RUN curl -O -J -L $(curl -sL https://api.github.com/repos/TES3MP/openmw-tes3mp/r
     && rm -rf TES3MP-server
 
 COPY ./entrypoint.sh /entrypoint.sh
+COPY tes3mp-server-default.cfg.tpl /home/container/tes3mp-server-default.cfg.tpl
+
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh", "--", "./tes3mp-server" ]
