@@ -1,7 +1,7 @@
 [General]
 # The default localAddress of 0.0.0.0 makes the server reachable at all of its local addresses
 # You almost never have to change this
-localAddress = 0.0.0.0
+localAddress = ${LOCAL_IP}
 port = ${SERVER_PORT}
 maximumPlayers = ${MAX_PLAYERS}
 hostname = ${SERVER_NAME}
