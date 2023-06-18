@@ -11,7 +11,11 @@ SERVER_PASSSWORD = ""
 ```
 
 #### To use: 
-`docker pull ghcr.io/hotarublaze/tes3mp-docker:0.8.1`
+```
+docker run -v ${PWD}/server/:/home/container/server ghcr.io/hotarublaze/tes3mp-docker:0.8.1
+```
+
+
 
 
 #### To Build:

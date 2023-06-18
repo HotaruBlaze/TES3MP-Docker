@@ -7,4 +7,4 @@ echo -e "Preparing Config"
 echo -e "Done Preparing Config"
 
 if test -f ./tes3mp-prelaunch; then bash ./tes3mp-prelaunch "$WRAPPER"; fi
-LD_LIBRARY_PATH="./lib" exec ./tes3mp-server.x86_64
+LD_LIBRARY_PATH="./lib" exec ./tes3mp-server.armv7l
